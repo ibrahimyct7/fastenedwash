@@ -109,3 +109,12 @@ body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helv
   font-weight: 600;
   color: var(--muted);
 }
+
+
+/* Mobile responsive for wash options */
+@media (max-width: 700px) {
+  .wash-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+  }
+}
