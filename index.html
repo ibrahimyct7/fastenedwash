@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fastened Wash — Your car, our passion.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <img src="assets/logo.png" alt="FastenedWash logo">
+    </div>
+    <nav class="nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle">MENU</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Your car,<br>our passion.</h1>
+        <p class="tag">Fastened Wash — Premium car wash & detailing in Quincy, MA. Quality work. Real care.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="pricing.html">View Pricing</a>
+          <a class="btn btn-ghost" href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="services">
+          <div class="service">
+            <h4>Mobile Wash</h4>
+            <p class="small">We come to you — exterior wash, quick dry and spot-free finish.</p>
+          </div>
+          <div class="service">
+            <h4>Interior Detail</h4>
+            <p class="small">Vacuum, wipe-down, glass & dashboard cleaning for a fresh cabin.</p>
+          </div>
+          <div class="service">
+            <h4>Full Detail</h4>
+            <p class="small">Deep clean, wax, trim care, and paint-safe finishing.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right card">
+        <h3>Fastened Wash</h3>
+        <p>Quincy, MA</p>
+        <p class="small">Phone: <a href="tel:+17744760157" style="color:var(--accent);text-decoration:none">+1 (774) 476-0157</a></p>
+        <p class="small">Instagram: <a href="https://instagram.com/FastenedWash" target="_blank" style="color:var(--accent);text-decoration:none">@FastenedWash</a></p>
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+        <p class="small">Want a custom quote or booking? Hit Contact.</p>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <div class="left small">© Fastened Wash — Quincy, MA</div>
+      <div class="social small">Instagram: @FastenedWash &nbsp; • &nbsp; <a href="tel:+17744760157" style="color:var(--accent);text-decoration:none">Call: +1 (774) 476-0157</a></div>
+    </footer>
+  </main>
+
+<script>
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+menuToggle.addEventListener('click', ()=>{
+  if(mainNav.style.display === 'flex'){ mainNav.style.display = 'none'; }
+  else { mainNav.style.display = 'flex'; }
+});
+</script>
+</body>
+</html>
