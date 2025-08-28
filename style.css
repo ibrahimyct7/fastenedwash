@@ -19,7 +19,12 @@ body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helv
 /* Header */
 .header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
 .brand{display:flex;align-items:center;gap:16px;}
-.brand img{height:128px;width:auto}
+.brand img {
+  height: 170px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
 .nav{display:flex;gap:18px;align-items:center;}
 .nav a{color:var(--accent);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:background .18s}
 .nav a:hover{background:rgba(255,255,255,0.04)}
@@ -29,7 +34,12 @@ body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helv
 @media (max-width:800px){
   .nav{display:none;position:absolute;top:84px;right:20px;background:rgba(0,0,0,0.2);backdrop-filter:blur(6px);padding:12px;border-radius:10px;flex-direction:column;}
   .menu-toggle{display:inline-block}
-  .brand img{height:112px}
+  .brand img {
+  height: 170px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
   .hero h1{font-size:36px}
   .container{padding:28px 16px}
 }
@@ -163,3 +173,137 @@ body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helv
 .btn-red:hover { background: #e74c3c; transition: background 0.3s ease; }
 .btn-blue:hover { background: #3498db; transition: background 0.3s ease; }
 .btn-gold:hover { background: #f1c40f; color: #071428; transition: background 0.3s ease, color 0.3s ease; }
+
+
+/* === Professional Enhancements === */
+
+/* Navigation active + hover underline */
+.nav a {
+  position: relative;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--magenta);
+  transition: width 0.3s ease;
+}
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* Card design */
+.card, .price {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.05));
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.card:hover, .price:hover {
+  transform: translateY(-4px);
+}
+
+/* Footer icons */
+.footer .social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer .social a[href*="instagram"]::before {
+  content: "📷";
+}
+.footer .social a[href^="tel"]::before {
+  content: "📞";
+}
+
+/* Mobile nav animation */
+@media (max-width:800px){
+  .nav {
+    display: none;
+    position: absolute;
+    top: 84px;
+    right: 20px;
+    background: rgba(0,0,0,0.9);
+    padding: 16px;
+    border-radius: 10px;
+    flex-direction: column;
+    animation: slideDown 0.3s ease;
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+
+/* Footer social links in lighter magenta-pink */
+.footer .social a {
+  color: #ff80ab;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer .social a:hover {
+  color: #ff99bb;
+}
+
+/* Contact layout fix for mobile */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+}
+@media (max-width:700px){
+  .contact-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.badge {
+  background: rgba(255,255,255,0.04);
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.cta.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta.center a {
+  display: inline-block;
+}
