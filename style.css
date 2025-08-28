@@ -118,3 +118,48 @@ body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helv
     justify-items: center;
   }
 }
+
+
+/* lighter purple on hover */
+  text-decoration: underline;
+}
+
+.btn-red:hover { background: #e74c3c; }
+.btn-blue:hover { background: #3498db; }
+.btn-gold:hover { background: #f1c40f; color: #071428; }
+
+
+/* soft purple hover */
+  text-decoration: underline;
+}
+
+.btn-red:hover { background: #e74c3c; transition: background 0.3s ease; }
+.btn-blue:hover { background: #3498db; transition: background 0.3s ease; }
+.btn-gold:hover { background: #f1c40f; color: #071428; transition: background 0.3s ease, color 0.3s ease; }
+
+
+/* lighter white on hover */
+  text-decoration: underline;
+}
+
+.btn-red:hover { background: #e74c3c; transition: background 0.3s ease; }
+.btn-blue:hover { background: #3498db; transition: background 0.3s ease; }
+.btn-gold:hover { background: #f1c40f; color: #071428; transition: background 0.3s ease, color 0.3s ease; }
+
+
+/* Custom Hover Effects */
+.back-link {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.back-link:hover {
+  color: #ffffff;
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.btn-red:hover { background: #e74c3c; transition: background 0.3s ease; }
+.btn-blue:hover { background: #3498db; transition: background 0.3s ease; }
+.btn-gold:hover { background: #f1c40f; color: #071428; transition: background 0.3s ease, color 0.3s ease; }
