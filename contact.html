@@ -10,17 +10,36 @@
 <body>
 <header class="container header">
 <div class="brand"><a href="index.html"><img alt="FastenedWash logo" src="assets/logo.png"/></a></div>
-<nav class="nav" id="mainNav"><a href="index.html">Home</a><a href="about.html">About</a><a href="pricing.html">Pricing</a><a href="contact.html" class="active">Contact</a></nav>
+<nav class="nav" id="mainNav"><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a></nav>
 <button class="menu-toggle" id="menuToggle">MENU</button>
 </header>
 <main class="container">
 <section style="padding:32px 0;max-width:800px;margin:0 auto">
 <h1 class="center">Contact Us</h1>
 <p class="center small">Questions, quotes, or bookings — send a message or call us directly.</p>
+
+<h2 id="selected-plan" class="center" style="margin-top:20px;color:var(--magenta)"></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="contact-layout" style="margin-top:20px">
 <form action="https://api.web3forms.com/submit" method="POST" style="background:rgba(255,255,255,0.02);padding:18px;border-radius:10px"><input name="access_key" type="hidden" value="f9b1706b-6fe0-48b4-b452-13ab3830bf9a"/><input name="redirect" type="hidden" value="thankyou.html"/>
 <label class="small">Name</label><br/><input name="name" required="" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);margin:6px 0 12px 0" type="text"/><br/>
 <label class="small">Email</label><br/><input name="email" required="" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);margin:6px 0 12px 0" type="email"/><br/>
+<label class="small">Address</label><br/><input name="address" required="" type="text" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);margin:6px 0 12px 0"/><br/>
 <label class="small">Message</label><br/><textarea name="message" required="" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);margin:6px 0 12px 0;height:120px"></textarea><br/>
 <button class="btn btn-primary" type="submit">Send Message</button>
 </form>
@@ -39,12 +58,66 @@
 <div class="social small">Instagram: <a href="https://instagram.com/FastenedWash" target="_blank">@FastenedWash</a>   •   <a href="tel:+17744760157" style="color:var(--accent);text-decoration:none">Call: +1 (774) 476-0157</a></div>
 </footer>
 </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-menuToggle && menuToggle.addEventListener('click', ()=>{
-  mainNav.style.display = mainNav.style.display === 'flex' ? 'none' : 'flex';
-});
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const plan = params.get("plan") || "";
+  let linkText = "← Pricing";
+  let href = "pricing.html";
+  if(plan.startsWith("wash")){
+    linkText = "← Wash";
+    href = "wash.html";
+  } else if(plan.startsWith("subscription")){
+    linkText = "← Subscriptions";
+    href = "subscriptions.html";
+  } else if(plan.startsWith("contract")){
+    linkText = "← Contracts";
+    href = "contracts.html";
+  }
+  const arrow = document.createElement("a");
+  arrow.href = href;
+  arrow.textContent = linkText;
+  arrow.style.color = "white";
+  arrow.style.display = "block";
+  arrow.style.marginTop = "10px";
+  arrow.className = "back-link";
+  const planEl = document.getElementById("selected-plan");
+  if(planEl) planEl.insertAdjacentElement("beforebegin", arrow);
+
+  // Booking text
+  const el = document.getElementById("selected-plan");
+  const hidden = document.getElementById("booking_info");
+  if(!el) return;
+  if(!plan){ el.textContent = ""; return; }
+  const parts = plan.split("-");
+  let type = parts[0] || "";
+  let value = parts[1] || "";
+  let text = "";
+  if(type === "subscription"){
+    text = "Booking $" + value + " Subscription";
+  } else if(type === "wash"){
+    text = "Booking $" + value + " Wash";
+  } else if(type === "contract"){
+    text = "Booking " + value.replace(/cars/i, " Cars") + " Contract";
+  }
+  el.textContent = text;
+  if(hidden) hidden.value = text;
+})();
 </script>
+
 </body>
 </html>
