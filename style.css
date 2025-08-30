@@ -380,3 +380,54 @@ h1, h2, h3, h4 {
   transform: scale(1.04);
   box-shadow: 0 6px 16px rgba(241,196,15,0.35);
 }
+
+
+/* === Custom Background Sections with Overlay === */
+.services-bg {
+  position: relative;
+  background: url("assets/car-upholstery-cleaner.jpg") center/cover no-repeat;
+  padding: 40px 20px;
+}
+.services-bg::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(7,20,40,0.65);
+  z-index: 0;
+}
+.services-bg .services {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-bg {
+  position: relative;
+  background: url("assets/DSC08500.jpg.webp") center/cover no-repeat;
+  padding: 48px 20px;
+}
+.gallery-bg::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(7,20,40,0.65);
+  z-index: 0;
+}
+.gallery-bg .gallery-section {
+  position: relative;
+  z-index: 1;
+}
+
+
+.gallery-single {
+  position: relative;
+  padding: 80px 20px;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 600;
+}
+.gallery-single p {
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
