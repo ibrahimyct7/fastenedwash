@@ -321,3 +321,62 @@ body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helv
     height: auto;
   }
 }
+
+
+/* Custom creative accents */
+.btn-primary {
+  background: var(--gold);
+  color: #2c3e50;
+  box-shadow: 0 6px 18px rgba(241,196,15,0.25);
+}
+.btn-primary:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+.nav a.active::after {
+  background: var(--gold);
+}
+
+.price .amount {
+  color: var(--magenta);
+}
+
+h1, h2, h3, h4 {
+  color: var(--gold);
+}
+
+
+}
+.cta .btn-primary:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+@media (max-width:800px){
+  .menu-toggle {
+    margin-left: -5px !important; /* bring closer to left */
+  }
+  .nav {
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+  }
+  .brand img {
+    max-height: 90px;
+  }
+}
+
+
+/* Buttons default subtle yellow with golden hover */
+.btn-primary {
+  background: #e6cf57; /* subtle soft yellow */
+  color: #071428;
+  box-shadow: 0 4px 12px rgba(230,207,87,0.25);
+}
+.btn-primary:hover {
+  background: #f1c40f; /* bright golden */
+  color: #071428;
+  transform: scale(1.04);
+  box-shadow: 0 6px 16px rgba(241,196,15,0.35);
+}
