@@ -1,0 +1,433 @@
+
+/* style.css - FastenedWash theme (navy + magenta + white) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  --navy:#071428;
+  --navy-2:#0b1b2a;
+  --magenta:#c2185b;
+  --accent:#f2ece7;
+  --muted:#9aa6b2;
+  --maxw:1100px;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,var(--navy),var(--navy-2)); color:var(--accent); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:48px 20px;}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+.brand{display:flex;align-items:center;gap:16px;}
+.brand img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.nav{display:flex;gap:18px;align-items:center;}
+.nav a{color:var(--accent);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:background .18s}
+.nav a:hover{background:rgba(255,255,255,0.04)}
+
+/* Mobile */
+.menu-toggle{display:none;background:transparent;border:0;color:var(--accent);font-weight:700}
+@media (max-width:800px){
+  .nav{display:none;position:absolute;top:84px;right:20px;background:rgba(0,0,0,0.2);backdrop-filter:blur(6px);padding:12px;border-radius:10px;flex-direction:column;}
+  .menu-toggle{display:inline-block}
+  .brand img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+  .hero h1{font-size:36px}
+  .container{padding:28px 16px}
+}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0}
+.hero-left{padding-right:12px}
+.hero h1{font-size:56px;margin:0 0 18px 0;line-height:1.02;color:var(--accent)}
+.tag{font-weight:500;color:var(--muted);font-size:18px;margin-bottom:22px;}
+.cta{display:flex;gap:16px}
+.btn{padding:14px 22px;border-radius:10px;border:0;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.btn-primary{background:var(--magenta);color:white;box-shadow:0 6px 18px rgba(194,24,91,0.14)}
+.btn-ghost{background:transparent;color:var(--accent);border:1px solid rgba(255,255,255,0.06)}
+
+/* Info box on right */
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.04));padding:28px;border-radius:12px;text-align:left}
+.card h3{margin:0 0 8px 0;color:var(--accent)}
+.card p{color:var(--muted);margin:0 0 14px 0}
+
+/* Services preview */
+.services{display:flex;gap:18px;margin-top:34px;flex-wrap:wrap}
+.service{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;min-width:220px;flex:1;}
+.service h4{margin:0 0 8px 0}
+.service p{margin:0;color:var(--muted)}
+
+/* Footer */
+.footer{margin-top:48px;padding:28px 0;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.footer .left{color:var(--muted)}
+.social{display:flex;gap:12px;align-items:center}
+
+/* Utility */
+.center{text-align:center}
+
+.small{font-size:14px;color:var(--muted)}
+
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.price{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.03));padding:18px;border-radius:12px;text-align:center}
+.price h3{margin:0 0 8px 0}
+.price .amount{font-size:28px;color:var(--magenta);font-weight:700;margin-bottom:12px}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr; text-align:center}
+  .hero-right{order:2}
+  .hero-left{order:1}
+  .price-grid{grid-template-columns:1fr}
+  .nav{right:12px;left:12px}
+}
+
+
+/* Gallery Section */
+.gallery-section {
+  padding: 48px 0;
+}
+
+.gallery-card {
+  background: rgba(255,255,255,0.02);
+  padding: 24px;
+  border-radius: 14px;
+  margin-top: 22px;
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.gallery-images img {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.05);
+}
+
+.gallery-images .label {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+
+/* Mobile responsive for wash options */
+@media (max-width: 700px) {
+  .wash-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+  }
+}
+
+
+/* lighter purple on hover */
+  text-decoration: underline;
+}
+
+.btn-red:hover { background: #e74c3c; }
+.btn-blue:hover { background: #3498db; }
+.btn-gold:hover { background: #f1c40f; color: #071428; }
+
+
+/* soft purple hover */
+  text-decoration: underline;
+}
+
+.btn-red:hover { background: #e74c3c; transition: background 0.3s ease; }
+.btn-blue:hover { background: #3498db; transition: background 0.3s ease; }
+.btn-gold:hover { background: #f1c40f; color: #071428; transition: background 0.3s ease, color 0.3s ease; }
+
+
+/* lighter white on hover */
+  text-decoration: underline;
+}
+
+.btn-red:hover { background: #e74c3c; transition: background 0.3s ease; }
+.btn-blue:hover { background: #3498db; transition: background 0.3s ease; }
+.btn-gold:hover { background: #f1c40f; color: #071428; transition: background 0.3s ease, color 0.3s ease; }
+
+
+/* Custom Hover Effects */
+.back-link {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.back-link:hover {
+  color: #ffffff;
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.btn-red:hover { background: #e74c3c; transition: background 0.3s ease; }
+.btn-blue:hover { background: #3498db; transition: background 0.3s ease; }
+.btn-gold:hover { background: #f1c40f; color: #071428; transition: background 0.3s ease, color 0.3s ease; }
+
+
+/* === Professional Enhancements === */
+
+/* Navigation active + hover underline */
+.nav a {
+  position: relative;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--magenta);
+  transition: width 0.3s ease;
+}
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* Card design */
+.card, .price {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.05));
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.card:hover, .price:hover {
+  transform: translateY(-4px);
+}
+
+/* Footer icons */
+.footer .social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer .social a[href*="instagram"]::before {
+  content: "📷";
+}
+.footer .social a[href^="tel"]::before {
+  content: "📞";
+}
+
+/* Mobile nav animation */
+@media (max-width:800px){
+  .nav {
+    display: none;
+    position: absolute;
+    top: 84px;
+    right: 20px;
+    background: rgba(0,0,0,0.9);
+    padding: 16px;
+    border-radius: 10px;
+    flex-direction: column;
+    animation: slideDown 0.3s ease;
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+
+/* Footer social links in lighter magenta-pink */
+.footer .social a {
+  color: #ff80ab;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer .social a:hover {
+  color: #ff99bb;
+}
+
+/* Contact layout fix for mobile */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+}
+@media (max-width:700px){
+  .contact-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.badge {
+  background: rgba(255,255,255,0.04);
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.cta.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta.center a {
+  display: inline-block;
+}
+
+@media (max-width:800px){
+  .menu-toggle {
+    margin-left: -10px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .logo img {
+    max-width: 120px;
+    height: auto;
+  }
+}
+
+
+/* Custom creative accents */
+.btn-primary {
+  background: var(--gold);
+  color: #2c3e50;
+  box-shadow: 0 6px 18px rgba(241,196,15,0.25);
+}
+.btn-primary:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+.nav a.active::after {
+  background: var(--gold);
+}
+
+.price .amount {
+  color: var(--magenta);
+}
+
+h1, h2, h3, h4 {
+  color: var(--gold);
+}
+
+
+}
+.cta .btn-primary:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+@media (max-width:800px){
+  .menu-toggle {
+    margin-left: -5px !important; /* bring closer to left */
+  }
+  .nav {
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+  }
+  .brand img {
+    max-height: 90px;
+  }
+}
+
+
+/* Buttons default subtle yellow with golden hover */
+.btn-primary {
+  background: #e6cf57; /* subtle soft yellow */
+  color: #071428;
+  box-shadow: 0 4px 12px rgba(230,207,87,0.25);
+}
+.btn-primary:hover {
+  background: #f1c40f; /* bright golden */
+  color: #071428;
+  transform: scale(1.04);
+  box-shadow: 0 6px 16px rgba(241,196,15,0.35);
+}
+
+
+/* === Custom Background Sections with Overlay === */
+.services-bg {
+  position: relative;
+  background: url("assets/car-upholstery-cleaner.jpg") center/cover no-repeat;
+  padding: 40px 20px;
+}
+.services-bg::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(7,20,40,0.65);
+  z-index: 0;
+}
+.services-bg .services {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-bg {
+  position: relative;
+  background: url("assets/DSC08500.jpg.webp") center/cover no-repeat;
+  padding: 48px 20px;
+}
+.gallery-bg::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(7,20,40,0.65);
+  z-index: 0;
+}
+.gallery-bg .gallery-section {
+  position: relative;
+  z-index: 1;
+}
+
+
+.gallery-single {
+  position: relative;
+  padding: 80px 20px;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 600;
+}
+.gallery-single p {
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Fastened Wash — Your car, our passion.</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="container header">
+<div class="brand">
+<a class="active" href="index.html"><img alt="FastenedWash logo" src="assets/logo.png"/></a>
+</div>
+<nav class="nav" id="mainNav">
+<a class="active" href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="pricing.html">Pricing</a>
+<a href="contact.html">Contact</a>
+</nav>
+<button class="menu-toggle" id="menuToggle">MENU</button>
+</header>
+<main class="container">
+<section class="hero center" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 0">
+<h1>Your car,<br/>our passion.</h1>
+<p class="tag">Fastened Wash — Premium car wash &amp; detailing in Quincy, MA. Quality work. Real care.</p>
+<div class="cta" style="justify-content:center">
+<a class="btn btn-primary" href="pricing.html">View Pricing</a>
+<a class="btn btn-ghost" href="contact.html">Contact Us</a>
+</div>
+<div class="services" style="justify-content:center">
+<div class="service">
+<h4>Mobile Wash</h4>
+<p class="small">We come to you — exterior wash, quick dry and spot-free finish.</p>
+</div>
+<div class="service">
+<h4>Interior Detail</h4>
+<p class="small">Vacuum, wipe-down, glass &amp; dashboard cleaning for a fresh cabin.</p>
+</div>
+<div class="service">
+<h4>Full Detail</h4>
+<p class="small">Deep clean, wax, trim care, and paint-safe finishing.</p>
+</div>
+</div>
+</section>
+<!-- Before & After Gallery -->
+<section class="gallery-bg center">
+<h2>Our Before &amp; After Gallery</h2>
+<div class="gallery-single">
+<p><strong>Check back soon</strong> to see our real transformations.</p>
+</div>
+</section>
+<section class="badges">
+<div class="badge">✅ Satisfaction-Focused Service</div>
+<div class="badge">🤝 Locally Owned &amp; Operated</div>
+</section>
+<section class="testimonials center" style="margin-top:48px">
+<h2>What Our Customers Say</h2>
+<div class="price-grid" style="margin-top:22px">
+<div class="card"><p>⭐⭐⭐⭐⭐<br/>"Fastened Wash did an amazing job — my SUV hasn’t looked this clean since I bought it. They showed up on time and were super polite too."<br/><em>— Jordan R.</em></p></div>
+<div class="card"><p>⭐⭐⭐⭐⭐<br/>"Honestly, I just needed a quick wash, but they went above and beyond. Definitely signing up for a subscription."<br/><em>— Maria L.</em></p></div>
+<div class="card"><p>⭐⭐⭐⭐⭐<br/>"Great service, fair price. They finished quicker than I expected and the interior smells fresh again."<br/><em>— David K.</em></p></div>
+<div class="card"><p>⭐⭐⭐⭐⭐<br/>"Booked them last week for a detail and was impressed. It’s nice to find a local business that actually cares."<br/><em>— Samantha W.</em></p></div>
+</div>
+</section>
+<div class="operating-hours" style="text-align:center;margin-top:20px;font-weight:600;color:#ffeb3b;">Operating Hours: 7 AM – 7 PM</div><footer class="footer">
+<div class="left small">© Fastened Wash — Quincy, MA</div>
+<div class="social small"><a href="https://instagram.com/FastenedWash" style="color:var(--accent);text-decoration:none" target="_blank">Instagram</a> • <a href="https://www.facebook.com/share/1GovngXvFz/?mibextid=wwXIfr" style="color:var(--accent);text-decoration:none" target="_blank">Facebook</a> • <a href="https://www.tiktok.com/@fastenedwash" style="color:var(--accent);text-decoration:none" target="_blank">TikTok</a> • <a href="https://x.com/fastenedwash?s=21" style="color:var(--accent);text-decoration:none" target="_blank">Twitter/X</a> • <a href="tel:+18572697028" style="color:var(--accent);text-decoration:none">Call: +1 (857) 269-7028</a></div>
+</footer>
+</main>
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+menuToggle.addEventListener('click', ()=>{
+  if(mainNav.style.display === 'flex'){ mainNav.style.display = 'none'; }
+  else { mainNav.style.display = 'flex'; }
+});
+</script>
+</body>
+</html>
