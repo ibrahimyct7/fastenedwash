@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Contact — Fastened Wash</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="container header">
+<div class="brand"><a href="index.html"><img alt="FastenedWash logo" src="assets/logo.png"/></a></div>
+<nav class="nav" id="mainNav"><a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="contact.html">Contact</a></nav>
+<button class="menu-toggle" id="menuToggle">MENU</button>
+</header>
+<main class="container">
+<section style="padding:32px 0;max-width:800px;margin:0 auto">
+<h1 class="center">Contact Us</h1>
+<p class="center small">Questions, quotes, or bookings — send a message or call us directly.</p>
+<h2 class="center" id="selected-plan" style="margin-top:20px;color:var(--magenta)"></h2>
+<div class="contact-layout" style="margin-top:20px">
+<form action="https://api.web3forms.com/submit" method="POST" style="background:rgba(255,255,255,0.02);padding:18px;border-radius:10px"><input name="access_key" type="hidden" value="f9b1706b-6fe0-48b4-b452-13ab3830bf9a"/><input name="redirect" type="hidden" value="thankyou.html"/>
+<label class="small">Name</label><br/><input name="name" required="" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);margin:6px 0 12px 0" type="text"/><br/>
+<label class="small">Email</label><br/><input name="email" required="" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);margin:6px 0 12px 0" type="email"/><br/>
+<label class="small">Address</label><br/><input name="address" required="" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);margin:6px 0 12px 0" type="text"/><br/>
+<label class="small">Message</label><br/><textarea name="message" required="" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);margin:6px 0 12px 0;height:120px"></textarea><br/>
+<button class="btn btn-primary" type="submit">Send Message</button>
+</form>
+<aside class="card">
+<h3>Contact Info</h3>
+<p class="small">Phone: <a href="tel:+18572697028" style="color:var(--accent);text-decoration:none">Call: +1 (857) 269-7028</a></p>
+<p class="small">Instagram: <a href="https://instagram.com/FastenedWash" style="color:var(--accent);text-decoration:none" target="_blank">@FastenedWash</a></p>
+<p class="small">Location: Quincy, MA</p>
+<hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0"/>
+<p class="small">Call or message to book. We respond quickly.</p>
+</aside>
+</div>
+</section>
+<div class="operating-hours" style="text-align:center;margin-top:20px;font-weight:600;color:#ffeb3b;">Operating Hours: 7 AM – 7 PM</div><footer class="footer">
+<div class="left small">© Fastened Wash — Quincy, MA</div>
+<div class="social small">Instagram: <a href="https://instagram.com/FastenedWash" target="_blank">@FastenedWash</a>   •   <a href="tel:+18572697028" style="color:var(--accent);text-decoration:none">Call: +1 (857) 269-7028</a></div>
+</footer>
+</main>
+<script>
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const plan = params.get("plan") || "";
+  let linkText = "← Pricing";
+  let href = "pricing.html";
+  if(plan.startsWith("wash")){
+    linkText = "← Wash";
+    href = "wash.html";
+  } else if(plan.startsWith("subscription")){
+    linkText = "← Subscriptions";
+    href = "subscriptions.html";
+  } else if(plan.startsWith("contract")){
+    linkText = "← Contracts";
+    href = "contracts.html";
+  }
+  const arrow = document.createElement("a");
+  arrow.href = href;
+  arrow.textContent = linkText;
+  arrow.style.color = "white";
+  arrow.style.display = "block";
+  arrow.style.marginTop = "10px";
+  arrow.className = "back-link";
+  const planEl = document.getElementById("selected-plan");
+  if(planEl) planEl.insertAdjacentElement("beforebegin", arrow);
+
+  // Booking text
+  const el = document.getElementById("selected-plan");
+  const hidden = document.getElementById("booking_info");
+  if(!el) return;
+  if(!plan){ el.textContent = ""; return; }
+  const parts = plan.split("-");
+  let type = parts[0] || "";
+  let value = parts[1] || "";
+  let text = "";
+  if(type === "subscription"){
+    text = "Booking $" + value + " Subscription";
+  } else if(type === "wash"){
+    text = "Booking $" + value + " Wash";
+  } else if(type === "contract"){
+    text = "Booking " + value.replace(/cars/i, " Cars") + " Contract";
+  }
+  el.textContent = text;
+  if(hidden) hidden.value = text;
+})();
+</script>
+</body>
+</html>
